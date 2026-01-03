@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login Success</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card {
+            background: #ffffff;
+            width: 420px;
+            padding: 30px;
+            border-radius: 14px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+            text-align: center;
+        }
+
+        .success-icon {
+            font-size: 48px;
+            color: #22c55e;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            margin: 10px 0 20px;
+            color: #1f2937;
+        }
+
+        .user {
+            background: #f3f4f6;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 20px;
+        }
+
+        .token-label {
+            text-align: left;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #374151;
+        }
+
+        textarea {
+            width: 100%;
+            height: 120px;
+            resize: none;
+            border-radius: 8px;
+            border: 1px solid #d1d5db;
+            padding: 10px;
+            font-size: 13px;
+            font-family: monospace;
+            background: #f9fafb;
+            color: #111827;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: #6366f1;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #6b7280;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="card">
+    <div class="success-icon">✅</div>
+
+    <h2>Login Successful</h2>
+
+    <div class="user">
+        Logged in as:
+        <span th:text="${username}"></span>
+    </div>
+
+    <div class="token-label">JWT Token</div>
+
+    <textarea readonly th:text="${token}"></textarea>
+
+    <div class="footer">
+        Keep this token secure. Do not share it.
+    </div>
+</div>
+
+</body>
+</html>
